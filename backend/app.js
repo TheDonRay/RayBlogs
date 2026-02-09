@@ -2,7 +2,10 @@ const express = require("express");
 const app = express();
 
 // set up the express json middleware here as such
-app.use(express.json());
+app.use(express.json()); 
+
+// import routes and attach a endpoint to them as such 
+
 
 app.get("/", (req, res) => {
   res.json({
