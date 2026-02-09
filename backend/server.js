@@ -12,8 +12,7 @@ const startServer = async () => {
   app.listen(PORT, () => {
     console.log(`RayBlogs Running on http://localhost:${PORT}`);
   });
-}; 
+};
 
-//invoke the function below here as such 
-startServer(); 
-
+//invoke the function below here as such
+startServer();

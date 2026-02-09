@@ -1,15 +1,14 @@
 const express = require("express");
 const app = express();
 
-
-// import Routes here 
-const introRoute = require('./routes/intro.route.js');  
+// import Routes here
+const introRoute = require("./routes/intro.route.js");
 
 // set up the express json middleware here as such
-app.use(express.json()); 
+app.use(express.json());
 
-//Route Mounting here 
-app.use('/api/v1/intro', introRoute); 
+//Route Mounting here
+app.use("/api/v1/intro", introRoute);
 
 app.get("/", (req, res) => {
   res.json({
