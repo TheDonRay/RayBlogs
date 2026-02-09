@@ -8,7 +8,7 @@ const introRoute = require("./routes/intro.route.js");
 app.use(express.json());
 
 //Route Mounting here
-app.use("/api/v1/intro", introRoute);
+app.use("/api/v1/", introRoute); // intro route here  
 
 app.get("/", (req, res) => {
   res.json({
