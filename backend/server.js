@@ -1,15 +1,19 @@
-require('dotenv').config(); 
-const { app, express } = require('./app.js'); 
-// import the apollo server stuff 
+require("dotenv").config();
+const app = require("./app.js");
 
-const PORT = process.env.PORT; 
+const PORT = process.env.PORT;
 
-const startServer = async () => { 
-    // instantiate the server here as such  
-    app.listen(PORT, () => { 
-        console.log(`RayBlog is successfully running on http://localhost:${PORT}`); 
-    }); 
+// set up the function for the actual apollo server stuff so that you understand it fully and correctly.
+const startServer = async () => {
+  // db config
+  // apollo server stuff here
+
+  // general app instance start for express below here
+  app.listen(PORT, () => {
+    console.log(`RayBlogs Running on http://localhost:${PORT}`);
+  });
 }; 
 
-// invoke the function here as such 
-startServer; 
+//invoke the function below here as such 
+startServer(); 
+
