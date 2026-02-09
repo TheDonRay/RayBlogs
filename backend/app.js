@@ -7,7 +7,7 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.json({
     Intro:
-      "Welcome to RayBlogs Not your typical blog post but rather a server to",
+      "Welcome to RayBlogs — not your typical blog. This is where I share my journey, one post at a time",
   });
 });
 
