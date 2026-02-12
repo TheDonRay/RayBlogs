@@ -1,7 +1,7 @@
-const express = require('express'); 
-aboutmeRoute = express.Router(); 
-const aboutmeController = require('../controllers/aboutme.controller.js'); 
+const express = require("express");
+aboutmeRoute = express.Router();
+const aboutmeController = require("../controllers/aboutme.controller.js");
 
-aboutmeRoute.get('/aboutme', aboutmeController); 
+aboutmeRoute.get("/aboutme", aboutmeController);
 
-module.exports = aboutmeRoute; 
+module.exports = aboutmeRoute;
