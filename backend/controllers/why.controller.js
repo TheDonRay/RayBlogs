@@ -1,16 +1,16 @@
 const whyRayBlogs = (req, res) => {
   // wrap this in a try and catch case.
   try {
-    const whyRayBlogs = req.query; 
+    const question = req.query; 
 
-    if (!whyRayBlogs || whyRayBlogs == " ") { 
+    if (!question.search) { // search parameters help with the req.query parameter  to make sure there is at least a key value pair. 
         return res.status(401).json({ 
             ErrorMessage: 'Nothing entered in query parameters.'
         }); 
     }; 
-    console.log("user typed in", whyRayBlogs);
+    console.log("user typed in", question);
     res.status(200).json({
-      WhyRay:
+      Question:
         "RayBlogs reimagines the diary by making blogging API-driven. Instead of a traditional interface, posts are accessed and updated through HTTP requests — creating a completely different kind of blog experience.",
     });
   } catch (error) {

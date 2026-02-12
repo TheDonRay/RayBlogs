@@ -2,6 +2,6 @@ const express = require("express");
 const whyRoute = express.Router();
 const whyController = require("../controllers/why.controller.js");
 
-whyRoute.get("/whyray", whyController);
+whyRoute.get("/question", whyController);
 
 module.exports = whyRoute;
