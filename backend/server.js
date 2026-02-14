@@ -4,8 +4,8 @@ const dbConnection = require("./config/dbconnection.js");
 
 const PORT = process.env.PORT;
 
-// set up the function for the actual apollo server stuff so that you understand it fully and correctly. 
-// as you can see to start the server here its a asynchronous function here as such: 
+// set up the function for the actual apollo server stuff so that you understand it fully and correctly.
+// as you can see to start the server here its a asynchronous function here as such:
 const startServer = async () => {
   // db config
   await dbConnection();
