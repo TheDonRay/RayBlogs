@@ -49,8 +49,13 @@ const postResolver = {
             // check to see if post saved 
             if (!savePost) { 
                 throw new Error('Error saving the post'); 
-            } 
+            }  
+            // if everything checks out we can save the post.  
             return savePost; 
+        }, 
+
+        updatePost: async (parent, args) => { 
+            
         }
     }
 }; 
