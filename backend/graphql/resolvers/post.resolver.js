@@ -17,7 +17,8 @@ const postResolver = {
         },   
 
         post: async () => { 
-            // searching the database for a specific type of post. 
+            // searching the database for a specific type of post.  
+            // implement try and catch case here to make sure its good. 
         }
 
     }
