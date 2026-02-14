@@ -29,9 +29,30 @@ const postResolver = {
                 console.error('Error with finding post from database', error); 
             }
         }  
-    } 
+    },
     
-    // now we can handle the mutations here as such which is completely different here as such 
+    // now we can handle the mutations here as such which is completely different here as such  
+    Mutation: { 
+        createPost: async (parent, args) => { 
+            // we basically want to create a post and save it onto the database 
+            // so a new post here as such that follows the typeDefinition inside the typeDef folder 
+            const newPost = new Post({ 
+                title: args.title, 
+                post: args.post, 
+            }); 
+            // error handling check here as such 
+            if (!newPost) { 
+                throw new Error('Error creating post'); 
+            }
+            // then we need to save that post into mongodb  
+            const savePost = await newPost.save(); 
+            // check to see if post saved 
+            if (!savePost) { 
+                throw new Error('Error saving the post'); 
+            } 
+            return savePost; 
+        }
+    }
 }; 
 
 module.exports = postResolver; 
