@@ -1,7 +1,7 @@
 const whyRayBlogs = (req, res) => {
   // wrap this in a try and catch case.
   try {
-    const question = req.query.question; 
+    const question = req.query.question; // compared to the usual req.query that would get like the entire query object the req.query.question just gets the specific value of the parameter assigned to the URL. 
 
     if (!question.search) { // search parameters help with the req.query parameter  to make sure there is at least a key value pair
         return res.status(401).json({ 
