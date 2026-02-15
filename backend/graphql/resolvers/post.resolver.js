@@ -81,7 +81,17 @@ const postResolver = {
     }, 
 
     deletePost: async (parent, args) => { 
-        // delete the post 
+        // delete the post here given the id retrieved 
+        try { 
+          const deletePost = await postdatabase.findByIdAndDelete(args.id); 
+          if (!deletePost) { 
+            throw new Error('Error deleting the post, something went wrong'); 
+          } 
+          return true; 
+        } catch (error) { 
+          console.log('There was an error deleting the post', error);  
+          return false; 
+        }
     }
   },
 };
