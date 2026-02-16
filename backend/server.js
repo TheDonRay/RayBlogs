@@ -1,6 +1,7 @@
 require("dotenv").config();
-const app = require("./app.js");
+const {app, express} = require("./app.js");
 const dbConnection = require("./config/dbconnection.js"); 
+const { expressMiddleware } = require("@as-integrations/express5");   
 const apolloserver = require('./graphql/ApolloServer.js'); 
 
 const PORT = process.env.PORT;

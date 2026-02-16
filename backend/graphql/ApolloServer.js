@@ -1,9 +1,9 @@
 // define the apollo server here as such
 const { ApolloServer } = require("@apollo/server");
 // get all the typeDefinitions here as such
-const { blogPosts } = require("../graphql/typeDefs");
+const { blogPosts } = require('../graphql/typeDefs/posts.typeDef.js');  
 // get all the resolvers here as such
-const {postQueryResolver, postMutation } = require('../graphql/resolvers'); 
+const {postQueryResolver, postMutation } = require('../graphql/resolvers/post.resolver.js'); 
 
 // export the apollo server here as such.
 const apolloserver = new ApolloServer({ 
