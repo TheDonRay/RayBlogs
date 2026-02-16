@@ -33,7 +33,6 @@ const postResolver = {
 
   // now we can handle the mutations here as such which is completely different here as such
   Mutation: {
-
     createPost: async (parent, args) => {
       // we basically want to create a post and save it onto the database
       // so a new post here as such that follows the typeDefinition inside the typeDef folder
@@ -57,42 +56,42 @@ const postResolver = {
       } catch (error) {
         console.error("Error creating a post and adding it into the database");
       }
-    }, 
+    },
 
     updatePost: async (parent, args) => {
       // first we need to find that post by id and update as such
       try {
         const findPost = await postdatabase.findByIdAndUpdate(
-          args.id, // we know automatically that mongodb here already creates the id from scratch 
-          { 
-          title: args.title,  
-          post: args.post 
+          args.id, // we know automatically that mongodb here already creates the id from scratch
+          {
+            title: args.title,
+            post: args.post,
           },
-          { new: true }, // this essentially tells mongodb to return the updated doument instead of the old one. 
+          { new: true }, // this essentially tells mongodb to return the updated doument instead of the old one.
         );
         if (!findPost) {
           throw new Error("Post could not be found to update that post");
-        } 
-        // return the post 
-        return findPost; 
+        }
+        // return the post
+        return findPost;
       } catch (error) {
         console.error("Error updating user blog post");
       }
-    }, 
+    },
 
-    deletePost: async (parent, args) => { 
-        // delete the post here given the id retrieved 
-        try { 
-          const deletePost = await postdatabase.findByIdAndDelete(args.id); 
-          if (!deletePost) { 
-            throw new Error('Error deleting the post, something went wrong'); 
-          } 
-          return true; 
-        } catch (error) { 
-          console.log('There was an error deleting the post', error);  
-          return false; 
+    deletePost: async (parent, args) => {
+      // delete the post here given the id retrieved
+      try {
+        const deletePost = await postdatabase.findByIdAndDelete(args.id);
+        if (!deletePost) {
+          throw new Error("Error deleting the post, something went wrong");
         }
-    }
+        return true;
+      } catch (error) {
+        console.log("There was an error deleting the post", error);
+        return false;
+      }
+    },
   },
 };
 

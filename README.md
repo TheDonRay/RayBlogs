@@ -9,6 +9,7 @@ RayBlogs is a minimalist, API-first blogging platform that embraces the raw simp
 ## 🎯 Concept
 
 Instead of browsing through a traditional blog interface, you interact directly with the API to:
+
 - Read daily stories and life updates
 - Explore posts chronologically
 - Experience blogging in its purest form—data
