@@ -1,7 +1,7 @@
 //import the database here as such
 const postdatabase = require("../../model/database.model.js");
 
-const postResolver = {
+const postQueryResolver = {
   Query: {
     posts: async () => {
       // set up a try and catch case here as such
@@ -30,7 +30,9 @@ const postResolver = {
       }
     },
   },
+}
 
+const postMutation = {
   // now we can handle the mutations here as such which is completely different here as such
   Mutation: {
     createPost: async (parent, args) => {
@@ -78,7 +80,7 @@ const postResolver = {
         console.error("Error updating user blog post");
       }
     },
-
+                                          
     deletePost: async (parent, args) => {
       // delete the post here given the id retrieved
       try {
@@ -95,4 +97,4 @@ const postResolver = {
   },
 };
 
-module.exports = postResolver;
+module.exports = { postQueryResolver, postMutation}; 
